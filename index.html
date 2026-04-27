@@ -38,6 +38,128 @@ nav{
 .hero-photo{
   position:absolute;right:0;top:0;bottom:0;width:55%;z-index:1;
 }
+.hero-photo::before{
+  content:'';position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(to right, var(--black) 0%, transparent 35%),
+    linear-gradient(to top, var(--black) 0%, transparent 30%),
+    linear-gradient(to left, var(--black) 0%, transparent 20%);
+  pointer-events:none;
+}
+.hero-slider{position:relative;width:100%;height:100%;overflow:hidden;}
+.slide{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity 0.9s ease;
+  display:flex;align-items:flex-end;
+}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.slide.active{opacity:1;}
+.slide-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(10,8,7,0.92) 0%, rgba(10,8,7,0.3) 50%, transparent 100%);
+  z-index:1;
+}
+.slide-caption{
+  position:relative;z-index:2;padding:2rem 2.5rem 3rem;
+  transform:translateY(8px);
+  transition:transform 0.5s ease 0.4s, opacity 0.5s ease 0.4s;
+  opacity:0;
+}
+.slide.active .slide-caption{transform:translateY(0);opacity:1;}
+.slide-tag{
+  display:inline-block;
+  font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;
+  background:rgba(201,160,160,0.15);color:var(--rose-light);
+  border:1px solid rgba(201,160,160,0.3);
+  padding:0.3rem 0.8rem;margin-bottom:0.8rem;
+}
+.slide-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-style:italic;
+  color:rgba(245,237,232,0.85);line-height:1.7;max-width:320px;
+}
+.slider-dots{
+  position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:0.5rem;z-index:5;
+}
+.dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(245,237,232,0.3);
+  cursor:pointer;transition:all 0.3s;border:none;padding:0;
+}
+.dot.active{background:var(--rose-light);width:18px;border-radius:4px;}
+.slider-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(10,8,7,0.5);border:1px solid rgba(201,160,160,0.2);
+  color:var(--rose-light);font-size:1.5rem;
+  width:2.5rem;height:2.5rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:5;transition:all 0.3s;line-height:1;
+}
+.slider-arrow:hover{background:var(--rose-deep);border-color:var(--rose-deep);}
+.slider-arrow.prev{left:1rem;}
+.slider-arrow.next{right:1rem;}
+.hero-photo::before{
+  content:'';position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(to right, var(--black) 0%, transparent 35%),
+    linear-gradient(to top, var(--black) 0%, transparent 30%),
+    linear-gradient(to left, var(--black) 0%, transparent 20%);
+  pointer-events:none;
+}
+.hero-slider{position:relative;width:100%;height:100%;overflow:hidden;}
+.slide{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity 0.9s ease;
+  display:flex;align-items:flex-end;
+}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.slide.active{opacity:1;}
+.slide-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(10,8,7,0.92) 0%, rgba(10,8,7,0.3) 50%, transparent 100%);
+  z-index:1;
+}
+.slide-caption{
+  position:relative;z-index:2;padding:2rem 2.5rem 3rem;
+  transform:translateY(8px);
+  transition:transform 0.5s ease 0.4s, opacity 0.5s ease 0.4s;
+  opacity:0;
+}
+.slide.active .slide-caption{transform:translateY(0);opacity:1;}
+.slide-tag{
+  display:inline-block;
+  font-size:0.52rem;letter-spacing:0.3em;text-transform:uppercase;
+  background:rgba(201,160,160,0.15);color:var(--rose-light);
+  border:1px solid rgba(201,160,160,0.3);
+  padding:0.3rem 0.8rem;margin-bottom:0.8rem;
+}
+.slide-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-style:italic;
+  color:rgba(245,237,232,0.85);line-height:1.7;max-width:320px;
+}
+.slider-dots{
+  position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:0.5rem;z-index:5;
+}
+.dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(245,237,232,0.3);
+  cursor:pointer;transition:all 0.3s;border:none;padding:0;
+}
+.dot.active{background:var(--rose-light);width:18px;border-radius:4px;}
+.slider-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(10,8,7,0.5);border:1px solid rgba(201,160,160,0.2);
+  color:var(--rose-light);font-size:1.5rem;
+  width:2.5rem;height:2.5rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:5;transition:all 0.3s;line-height:1;
+}
+.slider-arrow:hover{background:var(--rose-deep);border-color:var(--rose-deep);}
+.slider-arrow.prev{left:1rem;}
+.slider-arrow.next{right:1rem;}
 /* IMPORTANT: Replace the div below with an <img> tag pointing to Molly's actual photo */
 /* Example: <img src="assets/molly-hero.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"> */
 .hero-photo-placeholder{
@@ -240,10 +362,60 @@ footer{background:var(--black);padding:4rem 3rem 2rem;border-top:1px solid rgba(
   <div class="hero-bg-fill"></div>
   <span class="hero-bg-letter">A</span>
   <div class="hero-photo">
-    <!-- TO DO: Replace this div with Molly's actual photo -->
-    <!-- <img src="assets/molly-hero.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"> -->
-    <div class="hero-photo-placeholder">
-      <span>Molly's<br>photo<br>here</span>
+    <div class="hero-slider">
+      <div class="slide active" style="background:linear-gradient(160deg,#1a0f0a,#3a1f10);">
+        <img src="assets/2 ASUNDER.png">">
+        <div class="slide-overlay"></div>
+        <div class="slide-caption">
+          <span class="slide-tag">Film & Video</span>
+          <p class="slide-desc">Deep character analysis, look book critiques & PA experiences from the set.</p>
+        </div>
+      </div>
+      <div class="slide" style="background:linear-gradient(160deg,#0e1408,#1a2810);">
+        <img src="assets/Healing herts logo.png">">
+        <div class="slide-overlay"></div>
+        <div class="slide-caption">
+          <span class="slide-tag">Health & Fitness</span>
+          <p class="slide-desc">A gym journey documented honestly — movement, nutrition & the ritual of showing up.</p>
+        </div>
+      </div>
+      <div class="slide" style="background:linear-gradient(160deg,#1a1010,#2e1818);">
+        <!-- <img src="assets/slide-fashion.jpg"> -->
+        <div class="slide-overlay"></div>
+        <div class="slide-caption">
+          <span class="slide-tag">Fashion & Beauty</span>
+          <p class="slide-desc">Clothes, wigs & styled looks — every outfit a sentence in a longer story.</p>
+        </div>
+      </div>
+      <div class="slide" style="background:linear-gradient(160deg,#0e1208,#1a2418);">
+        <!-- <img src="assets/slide-books.jpg"> -->
+        <div class="slide-overlay"></div>
+        <div class="slide-caption">
+          <span class="slide-tag">Books & Stories</span>
+          <p class="slide-desc">Poems, serialized fiction, journal essays & a novel that is coming when it's ready.</p>
+        </div>
+      </div>
+      <div class="slide" style="background:linear-gradient(160deg,#180e28,#2e1848);">
+        <!-- <img src="assets/slide-mental.jpg"> -->
+        <div class="slide-overlay"></div>
+        <div class="slide-caption">
+          <span class="slide-tag">Healing Hearts</span>
+          <p class="slide-desc">Mental health advocacy, the Healing Hearts organization & safe community spaces.</p>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="slider-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+      </div>
+
+      <!-- Arrows -->
+      <button class="slider-arrow prev" aria-label="Previous">&#8249;</button>
+      <button class="slider-arrow next" aria-label="Next">&#8250;</button>
     </div>
   </div>
   <div class="hero-content">
@@ -415,6 +587,39 @@ footer{background:var(--black);padding:4rem 3rem 2rem;border-top:1px solid rgba(
     </div>
   </div>
 </footer>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+  let timer;
 
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startTimer() {
+    timer = setInterval(next, 4000);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    startTimer();
+  }
+
+  document.querySelector('.slider-arrow.next').addEventListener('click', () => { next(); resetTimer(); });
+  document.querySelector('.slider-arrow.prev').addEventListener('click', () => { prev(); resetTimer(); });
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); resetTimer(); });
+  });
+
+  startTimer();
+</script>
 </body>
 </html>
