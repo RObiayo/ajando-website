@@ -169,17 +169,44 @@ a{text-decoration:none;color:inherit;}
 
 @media(max-width:768px){
   .nav{padding:1rem 1.5rem;}
-  .hero{grid-template-columns:1fr;}
+  .nav-section{display:none;}
+
+  /* HERO */
+  .hero{grid-template-columns:1fr;min-height:60vh;}
   .hero-right{display:none;}
   .hero-left{padding:4rem 1.5rem 3rem;}
+  .hero-pillars{overflow-x:auto;}
+
+  /* STATS BAR */
   .stats-bar{grid-template-columns:1fr 1fr;}
-  .filter-bar{padding:1.5rem;}
-  .content-grid,.edu-grid{grid-template-columns:1fr 1fr;margin:0 1.5rem 3rem;}
-  .card.featured{grid-column:span 2;}
+  .stat-cell{padding:1.5rem 1rem;}
+
+  /* FILTER */
+  .filter-bar{padding:1.5rem 1.5rem 1rem;gap:0.5rem;}
+  .filter-btn{padding:0.4rem 0.8rem;font-size:0.55rem;}
+  .results-count{width:100%;margin-left:0;}
+
+  /* SECTION LABEL */
   .section-label{padding:2rem 1.5rem 1rem;}
-  .shop-teaser{grid-template-columns:1fr;margin:0 1.5rem 3rem;}
+
+  /* CONTENT GRID */
+  .content-grid{grid-template-columns:1fr;margin:0 1.5rem 3rem;}
+  .card.featured{grid-column:span 1;min-height:260px;}
+  .card{aspect-ratio:4/3;}
+
+  /* JOURNEY */
   .journey{margin:0 1.5rem 3rem;}
   .journey-grid{grid-template-columns:1fr 1fr;}
+  .journey-step{padding:1.5rem;}
+
+  /* EDUCATION */
+  .edu-grid{grid-template-columns:1fr;margin:0 1.5rem 3rem;}
+
+  /* SHOP */
+  .shop-teaser{grid-template-columns:1fr;margin:0 1.5rem 3rem;}
+  .shop-card{padding:2rem 1.5rem;}
+
+  /* FOOTER */
   .page-footer{flex-direction:column;gap:1.5rem;padding:2rem 1.5rem;text-align:center;}
   .pf-nav{flex-wrap:wrap;justify-content:center;gap:1rem;}
 }

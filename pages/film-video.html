@@ -95,7 +95,42 @@ html{scroll-behavior:smooth;}body{background:var(--black);color:var(--cream);fon
 .pf-nav a{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);transition:color 0.3s;}.pf-nav a:hover{color:var(--cream);}
 .pf-next{display:flex;align-items:center;gap:0.8rem;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;transition:color 0.3s;}.pf-next:hover{color:var(--cream);}
 .pf-next-arrow{width:2rem;height:2rem;border:1px solid rgba(201,160,160,0.2);display:flex;align-items:center;justify-content:center;transition:all 0.3s;}.pf-next:hover .pf-next-arrow{border-color:var(--rose-deep);color:var(--rose);}
-@media(max-width:768px){.nav{padding:1rem 1.5rem;}.hero{grid-template-columns:1fr;}.hero-right{display:none;}.hero-left{padding:4rem 1.5rem 3rem;}.filter-bar{padding:1.5rem;}.content-grid{grid-template-columns:1fr 1fr;margin:0 1.5rem 3rem;}.card.featured{grid-column:span 2;}.section-label{padding:2rem 1.5rem 1rem;}.pa-strip{grid-template-columns:1fr;margin:0 1.5rem 3rem;}.pa-right{grid-template-columns:1fr;}.coming-banner{flex-direction:column;gap:1.5rem;margin:0 1.5rem 3rem;}.page-footer{flex-direction:column;gap:1.5rem;padding:2rem 1.5rem;}.pf-nav{flex-wrap:wrap;gap:1rem;}}
+@media(max-width:768px){
+  .nav{padding:1rem 1.5rem;}
+  .nav-section{display:none;}
+
+  /* HERO */
+  .hero{grid-template-columns:1fr;min-height:60vh;}
+  .hero-right{display:none;}
+  .hero-left{padding:4rem 1.5rem 3rem;}
+  .hero-stats{gap:1.5rem;}
+
+  /* FILTER */
+  .filter-bar{padding:1.5rem 1.5rem 1rem;gap:0.5rem;}
+  .filter-btn{padding:0.4rem 0.8rem;font-size:0.55rem;}
+  .results-count{width:100%;margin-left:0;margin-top:0.5rem;}
+
+  /* SECTION LABEL */
+  .section-label{padding:2rem 1.5rem 1rem;}
+
+  /* CONTENT GRID */
+  .content-grid{grid-template-columns:1fr;margin:0 1.5rem 3rem;}
+  .card.featured{grid-column:span 1;min-height:280px;}
+  .card{aspect-ratio:4/3;}
+  .card-title{font-size:1rem;}
+
+  /* PA STRIP */
+  .pa-strip{grid-template-columns:1fr;margin:0 1.5rem 3rem;}
+  .pa-right{grid-template-columns:1fr;padding:2rem 1.5rem;}
+  .pa-left{padding:2rem 1.5rem;}
+
+  /* COMING BANNER */
+  .coming-banner{flex-direction:column;gap:1.5rem;text-align:center;margin:0 1.5rem 3rem;padding:2rem 1.5rem;}
+
+  /* FOOTER */
+  .page-footer{flex-direction:column;gap:1.5rem;padding:2rem 1.5rem;text-align:center;}
+  .pf-nav{flex-wrap:wrap;justify-content:center;gap:1rem;}
+}
 </style>
 </head>
 <body>
