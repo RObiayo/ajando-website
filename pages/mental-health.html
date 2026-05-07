@@ -126,6 +126,19 @@ a{text-decoration:none;color:inherit;}
 @keyframes up{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @media(max-width:768px){
+  /* HEALING HEARTS GALLERY */
+  .hh-gallery{
+    grid-template-columns:1fr 1fr;
+    margin:0 1.5rem 3rem;
+  }
+  .hh-photo.hh-large{
+    grid-column:span 2;
+    grid-row:span 1;
+    min-height:260px;
+  }
+  .hh-photo{
+    aspect-ratio:1/1;
+  }
   .nav{padding:1rem 1.5rem;}
   .nav-section{display:none;}
 
@@ -162,6 +175,99 @@ a{text-decoration:none;color:inherit;}
   .sc{border-right:none;border-bottom:1px solid rgba(168,152,200,0.08);padding:2rem 1.5rem;}
 
   /* RESOURCES */
+  /* HEALING HEARTS GALLERY */
+.hh-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto;
+  gap:2px;
+  background:rgba(168,152,200,0.05);
+  margin:0 3rem 5rem;
+}
+.hh-photo{
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  aspect-ratio:4/3;
+}
+.hh-photo.hh-large{
+  grid-column:span 2;
+  grid-row:span 2;
+  aspect-ratio:auto;
+  min-height:480px;
+}
+.hh-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  transition:transform 0.6s ease;
+}
+.hh-photo:hover img{
+  transform:scale(1.05);
+}
+.hh-photo-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(10,8,7,0.92) 0%, rgba(10,8,7,0.3) 50%, transparent 100%);
+  z-index:1;
+  transition:opacity 0.4s;
+}
+.hh-photo:hover .hh-photo-overlay{
+  opacity:0.95;
+}
+.hh-photo-caption{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:1.5rem;
+  z-index:2;
+  transform:translateY(6px);
+  opacity:0.9;
+  transition:all 0.4s ease;
+}
+.hh-photo:hover .hh-photo-caption{
+  transform:translateY(0);
+  opacity:1;
+}
+.hh-photo-tag{
+  display:inline-block;
+  font-size:0.5rem;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  background:rgba(168,152,200,0.15);
+  color:var(--lav-light);
+  border:1px solid rgba(168,152,200,0.25);
+  padding:0.22rem 0.6rem;
+  margin-bottom:0.5rem;
+}
+.hh-photo-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--cream);
+  line-height:1.25;
+  margin-bottom:0.3rem;
+}
+.hh-photo.hh-large .hh-photo-title{
+  font-size:1.4rem;
+}
+.hh-photo-desc{
+  font-size:0.62rem;
+  color:rgba(245,237,232,0.65);
+  line-height:1.7;
+  font-weight:300;
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:all 0.4s ease 0.05s;
+}
+.hh-photo:hover .hh-photo-desc{
+  max-height:4rem;
+  opacity:1;
+}
   .resources{margin:0 1.5rem 3rem;padding:2rem 1.5rem;}
   .res-grid{grid-template-columns:1fr;}
 
@@ -223,6 +329,78 @@ a{text-decoration:none;color:inherit;}
     <div class="org-cell"><span class="org-icon">&#128226;</span><div class="org-cell-h">Advocacy & Awareness</div><div class="org-cell-p">Pushing for cultural and systemic change — in Nairobi, in Kenya, and in every room Healing Hearts enters.</div><span class="org-arr">&rarr;</span></div>
     <div class="org-cell"><span class="org-icon">&#127807;</span><div class="org-cell-h">Education & Resources</div><div class="org-cell-p">Sharing evidence-based information in accessible, culturally relevant ways that meet people where they are.</div><span class="org-arr">&rarr;</span></div>
   </div>
+</div>
+<!-- HEALING HEARTS GALLERY -->
+<div class="sl">
+  <span class="sl-tag">Our Work</span>
+  <div class="sl-rule"></div>
+  <span class="sl-title">Healing Hearts in Action</span>
+</div>
+
+<div class="hh-gallery">
+
+  <!-- Featured large photo -->
+  <div class="hh-photo hh-large">
+    <img src="../assets/hh01.jpg" alt="Healing Hearts organization event — community gathering">
+    <div class="hh-photo-overlay"></div>
+    <div class="hh-photo-caption">
+      <span class="hh-photo-tag">Community</span>
+      <p class="hh-photo-title">Building Safe Spaces Together</p>
+      <p class="hh-photo-desc">A brief description of this event or moment — what happened, who was there, why it mattered.</p>
+    </div>
+  </div>
+
+  <!-- Smaller photos -->
+  <div class="hh-photo">
+    <img src="../assets/hh02.jpg" alt="Healing Hearts — awareness session">
+    <div class="hh-photo-overlay"></div>
+    <div class="hh-photo-caption">
+      <span class="hh-photo-tag">Advocacy</span>
+      <p class="hh-photo-title">Mental Health Awareness Session</p>
+      <p class="hh-photo-desc">Short description of this moment.</p>
+    </div>
+  </div>
+
+  <div class="hh-photo">
+    <img src="../assets/hh-03.jpg" alt="Healing Hearts — support group session">
+    <div class="hh-photo-overlay"></div>
+    <div class="hh-photo-caption">
+      <span class="hh-photo-tag">Support</span>
+      <p class="hh-photo-title">Support Group Session</p>
+      <p class="hh-photo-desc">Short description of this moment.</p>
+    </div>
+  </div>
+
+  <div class="hh-photo">
+    <img src="../assets/hh-04.jpg" alt="Healing Hearts — community outreach">
+    <div class="hh-photo-overlay"></div>
+    <div class="hh-photo-caption">
+      <span class="hh-photo-tag">Outreach</span>
+      <p class="hh-photo-title">Community Outreach</p>
+      <p class="hh-photo-desc">Short description of this moment.</p>
+    </div>
+  </div>
+
+  <div class="hh-photo">
+    <img src="../assets/hh-05.jpg" alt="Healing Hearts — workshop">
+    <div class="hh-photo-overlay"></div>
+    <div class="hh-photo-caption">
+      <span class="hh-photo-tag">Education</span>
+      <p class="hh-photo-title">Workshop & Learning</p>
+      <p class="hh-photo-desc">Short description of this moment.</p>
+    </div>
+  </div>
+
+  <div class="hh-photo">
+    <img src="../assets/hh-06.jpg" alt="Healing Hearts — team and volunteers">
+    <div class="hh-photo-overlay"></div>
+    <div class="hh-photo-caption">
+      <span class="hh-photo-tag">Team</span>
+      <p class="hh-photo-title">The People Behind the Work</p>
+      <p class="hh-photo-desc">Short description of this moment.</p>
+    </div>
+  </div>
+
 </div>
 <div class="sl"><span class="sl-tag">Chapter III</span><div class="sl-rule"></div><span class="sl-title">Film Through a Mental Health Lens</span></div>
 <div class="fmh">
