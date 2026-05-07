@@ -179,22 +179,24 @@ a{text-decoration:none;color:inherit;}
 .hh-gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  grid-template-rows:auto;
   gap:2px;
   background:rgba(168,152,200,0.05);
   margin:0 3rem 5rem;
+  overflow:hidden;
 }
 .hh-photo{
   position:relative;
   overflow:hidden;
   cursor:pointer;
   aspect-ratio:4/3;
+  background:var(--black-soft);
 }
 .hh-photo.hh-large{
   grid-column:span 2;
   grid-row:span 2;
-  aspect-ratio:auto;
-  min-height:480px;
+  aspect-ratio:unset;
+  min-height:0;
+  max-height:480px;
 }
 .hh-photo img{
   position:absolute;
@@ -202,7 +204,7 @@ a{text-decoration:none;color:inherit;}
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center;
+  object-position:center top;
   display:block;
   transition:transform 0.6s ease;
 }
@@ -212,7 +214,7 @@ a{text-decoration:none;color:inherit;}
 .hh-photo-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(to top, rgba(10,8,7,0.92) 0%, rgba(10,8,7,0.3) 50%, transparent 100%);
+  background:linear-gradient(to top, rgba(10,8,7,0.92) 0%, rgba(10,8,7,0.2) 60%, transparent 100%);
   z-index:1;
   transition:opacity 0.4s;
 }
@@ -221,10 +223,12 @@ a{text-decoration:none;color:inherit;}
 }
 .hh-photo-caption{
   position:absolute;
-  bottom:0;left:0;right:0;
-  padding:1.5rem;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:1.2rem;
   z-index:2;
-  transform:translateY(6px);
+  transform:translateY(4px);
   opacity:0.9;
   transition:all 0.4s ease;
 }
@@ -234,30 +238,30 @@ a{text-decoration:none;color:inherit;}
 }
 .hh-photo-tag{
   display:inline-block;
-  font-size:0.5rem;
-  letter-spacing:0.28em;
+  font-size:0.48rem;
+  letter-spacing:0.25em;
   text-transform:uppercase;
   background:rgba(168,152,200,0.15);
   color:var(--lav-light);
   border:1px solid rgba(168,152,200,0.25);
-  padding:0.22rem 0.6rem;
-  margin-bottom:0.5rem;
+  padding:0.2rem 0.5rem;
+  margin-bottom:0.4rem;
 }
 .hh-photo-title{
   font-family:'Playfair Display',serif;
-  font-size:1rem;
+  font-size:0.9rem;
   font-weight:700;
   color:var(--cream);
   line-height:1.25;
-  margin-bottom:0.3rem;
+  margin-bottom:0.2rem;
 }
 .hh-photo.hh-large .hh-photo-title{
-  font-size:1.4rem;
+  font-size:1.3rem;
 }
 .hh-photo-desc{
-  font-size:0.62rem;
+  font-size:0.6rem;
   color:rgba(245,237,232,0.65);
-  line-height:1.7;
+  line-height:1.6;
   font-weight:300;
   max-height:0;
   overflow:hidden;
@@ -265,7 +269,7 @@ a{text-decoration:none;color:inherit;}
   transition:all 0.4s ease 0.05s;
 }
 .hh-photo:hover .hh-photo-desc{
-  max-height:4rem;
+  max-height:3rem;
   opacity:1;
 }
   .resources{margin:0 1.5rem 3rem;padding:2rem 1.5rem;}
