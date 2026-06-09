@@ -347,7 +347,122 @@ nav{
 .about-stats{display:flex;gap:3rem;padding-top:2rem;border-top:1px solid rgba(201,160,160,0.15);}
 .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--rose-light);}
 .stat-label{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-dim);margin-top:0.3rem;}
-
+/* NEW ABOUT — photo led */
+.about-new{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:90vh;
+  border-top:1px solid rgba(201,160,160,0.1);
+}
+.about-photo-col{
+  position:relative;
+  overflow:hidden;
+  background:var(--black-soft);
+}
+.about-photo-col img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.about-photo-placeholder{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(160deg,#1a0f0a 0%,#3a1f10 40%,#1a0a08 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.about-photo-placeholder span{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  font-weight:700;
+  font-style:italic;
+  color:rgba(201,160,160,0.2);
+  text-align:center;
+  line-height:1.4;
+}
+/* hide placeholder once real img loads */
+.about-photo-col img ~ .about-photo-placeholder{
+  display:none;
+}
+.about-text-col{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:5rem 4rem;
+  position:relative;
+}
+.about-new-label{
+  font-size:0.58rem;
+  letter-spacing:0.45em;
+  text-transform:uppercase;
+  color:var(--choco-light);
+  margin-bottom:1.2rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.about-new-label::before{
+  content:'';
+  display:block;
+  width:2rem;
+  height:1px;
+  background:var(--choco-light);
+}
+.about-new-heading{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,4vw,3.8rem);
+  font-weight:900;
+  line-height:1.0;
+  color:var(--cream);
+  margin-bottom:0;
+}
+.about-new-heading em{
+  color:var(--rose);
+  font-style:italic;
+}
+.about-new-rule{
+  width:3rem;
+  height:2px;
+  background:var(--rose-deep);
+  margin:2rem 0;
+}
+.about-new-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;
+  font-style:italic;
+  color:rgba(245,237,232,0.72);
+  line-height:1.9;
+  margin-bottom:1.5rem;
+}
+.about-new-bio{
+  font-size:0.72rem;
+  font-weight:300;
+  color:var(--text-dim);
+  line-height:2.1;
+  margin-bottom:2.5rem;
+}
+.about-new-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  font-size:0.62rem;
+  font-weight:500;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--rose-light);
+  border-bottom:1px solid rgba(232,206,206,0.35);
+  padding-bottom:0.25rem;
+  text-decoration:none;
+  transition:gap 0.3s ease, border-color 0.3s ease;
+  width:fit-content;
+}
+.about-new-cta:hover{
+  gap:1rem;
+  border-color:var(--rose-light);
+}
 /* FOOTER */
 footer{background:var(--black);padding:4rem 3rem 2rem;border-top:1px solid rgba(201,160,160,0.1);}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4rem;}
@@ -369,6 +484,21 @@ footer{background:var(--black);padding:4rem 3rem 2rem;border-top:1px solid rgba(
 @media(max-width:768px){
   nav{padding:1rem 1.5rem;}
   .nav-links,.nav-cta{display:none;}
+  .about-new{
+  grid-template-columns:1fr;
+    min-height:0;
+}
+.about-photo-col{
+  height:65vw;
+  min-height:260px;
+  max-height:420px;
+}
+.about-text-col{
+  padding:3rem 1.5rem;
+}
+.about-new-heading{
+  font-size:clamp(2rem,8vw,3rem);
+}
 
   /* HERO SLIDER */
   .hero{min-height:100svh;}
@@ -571,50 +701,28 @@ footer{background:var(--black);padding:4rem 3rem 2rem;border-top:1px solid rgba(
   </a>
 </div>
 
-<!-- EDITORIAL -->
-<section class="editorial">
-  <div>
-    <blockquote class="editorial-quote">"Every world I live in <span>feeds the others</span> — the screen, the gym, the page, the wardrobe, the mind."</blockquote>
-    <p class="editorial-attribution">Ajando</p>
-  </div>
-  <div class="editorial-right">
-    <div class="editorial-item">
-      <div class="editorial-item-num">I</div>
-      <div><p class="editorial-item-title">Storyteller First</p><p class="editorial-item-text">Every pillar of this site connects — content that's honest, layered, and built for an audience that wants depth alongside beauty.</p></div>
-    </div>
-    <div class="editorial-item">
-      <div class="editorial-item-num">II</div>
-      <div><p class="editorial-item-title">Commerce with Intention</p><p class="editorial-item-text">Fashion, gym wear, and superfoods aren't just products — they're extensions of the lifestyle being built in real time.</p></div>
-    </div>
-    <div class="editorial-item">
-      <div class="editorial-item-num">III</div>
-      <div><p class="editorial-item-title">Community Over Content</p><p class="editorial-item-text">From support groups to serialized fiction — a gathering place for people who feel everything a little too deeply.</p></div>
-    </div>
-  </div>
-</section>
+<!-- ABOUT — clean, photo-led -->
+<section class="about-new" id="about">
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div>
-    <p class="about-label">02 — About</p>
-    <h2 class="about-heading">Many worlds.<br><em>One voice.</em></h2>
-  </div>
-  <div class="about-right">
-    <p class="about-text">"I exist in the space between stories — the ones told on screen, on the page, in the mirror, and in the silence after a hard season."</p>
-    <!-- TO DO: Replace the placeholder text below with Molly's actual bio -->
-    <p class="about-text-2">I am a storyteller with a deep interest in film, books, history, and art, drawn to exploring the emotional and cultural threads that shape how we live and relate to one another.
-I have worked as a production assistant on the paranormal feature film 2 Asunder, which premiered in 2024 on Phil TV. As part of the production process, I supported the development of the original look book and assisted in executing the second, including coordinating wardrobe collaborations with Miny Baruch Fashions. I also have experience in fashion styling, having collaborated with Oluwa Femmi and begun my journey as a stylist during my time on campus.
-Beyond film and fashion, I am the co-founder of Healing Hearts Organization, where I coordinate mental health initiatives for girls and young people navigating the lasting impact of sexual violence and childhood trauma. Through this work, Our organization has partnered with organizations such as Girls First Finance and KAPC, and contributed to community efforts including volunteering with The Nest.
-I am currently building Ajando, a platform where I share stories across writing, culture, and lived experience, with a focus on mental health, feminism, and the weight of being human.
-As I continue to grow, I am expanding my work into authorship, film production, and performance, exploring storytelling in all its forms, from the written word to the screen to embodied expression.
-At the core of my work is a belief that stories, whether told through film, fashion, or literature, can deepen empathy and transform how we see ourselves and each other.
-</p>
-    <div class="about-stats">
-      <div><div class="stat-num">5</div><div class="stat-label">Worlds</div></div>
-      <div><div class="stat-num">1</div><div class="stat-label">Novel Coming</div></div>
-      <div><div class="stat-num">∞</div><div class="stat-label">Stories to Tell</div></div>
+  <div class="about-photo-col">
+    <!-- Replace with Molly's actual photo -->
+    <img src="assets/molly-about.jpg" alt="Molly Ajando">
+    <!-- Placeholder shown until photo is added -->
+    <div class="about-photo-placeholder">
+      <span>Molly's<br>photo<br>here</span>
     </div>
   </div>
+
+  <div class="about-text-col">
+    <p class="about-new-label">About</p>
+    <h2 class="about-new-heading">Many worlds.<br><em>One voice.</em></h2>
+    <div class="about-new-rule"></div>
+    <p class="about-new-quote">"I exist in the space between stories — the ones told on screen, on the page, in the mirror, and in the silence after a hard season."</p>
+    <!-- Replace the paragraph below with Molly's actual bio -->
+    <p class="about-new-bio">[Molly's bio goes here — her story, her why, where she is going. In her own words.]</p>
+    <a href="#worlds" class="about-new-cta">Explore Her Worlds →</a>
+  </div>
+
 </section>
 
 <!-- FOOTER -->
